@@ -46,7 +46,7 @@ let questions = [
   },
     {
     numb: 5,
-    question: "Bryan vende un crroen 12000 ganando 1/5 sobre el costo. El precio de compra fue?",
+    question: "Bryan vende un carro en 12000 ganando 1/5 sobre el costo. El precio de compra fue?",
     answer: "9600",
     options: [
       "2400",

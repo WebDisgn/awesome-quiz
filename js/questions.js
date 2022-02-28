@@ -2,57 +2,57 @@
 let questions = [
     {
     numb: 1,
-    question: "Que es html  ",
-    answer: "Lenguaje de marcado para hipertexto",
+    question: "En una concesionaria de vehiculos hay 5 camionetas, 25 autobuses y 20  motos : Que porcentaje del total son motos?",
+    answer: "40%",
     options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Lenguaje de marcado para hipertexto",
-      "Hyper Tool Multi Language"
+      "10%",
+      "50%",
+      "40%",
+      "25%"
     ]
   },
     {
     numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
+    question: "Seleccione el numero mayor de el grupo?",
+    answer: "3.011199",
     options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
+      "3.011199",
+      "3.0009999999",
+      "3.0009",
+      "3.001"
     ]
   },
     {
     numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: "Que numero sigue la serie? <br>4, 9, 16, 25, 36, 49,",
+    answer: "64",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
+      "80",
+      "74",
+      "64",
+      "62"
     ]
   },
     {
     numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
+    question: "Seleccine el numero que reemplazaria el signo de interrogacion? <br>4+c=8 <br>c=?",
+    answer: "4",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "2",
+      "4",
+      "3",
+      "1"
     ]
   },
     {
     numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    question: "Bryan vende un crroen 12000 ganando 1/5 sobre el costo. El precio de compra fue?",
+    answer: "9600",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "2400",
+      "9600",
+      "10000",
+      "2000"
     ]
   }
 ];

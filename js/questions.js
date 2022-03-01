@@ -2,7 +2,7 @@
 let questions = [
     {
     numb: 1,
-    question: "En una concesionaria de vehiculos hay 5 camionetas, 25 autobuses y 20  motos : Que porcentaje del total son motos?",
+    question: " Despejar X:<br> 50 = 100% <br>20 = X ",
     answer: "40%",
     options: [
       "10%",
@@ -35,7 +35,7 @@ let questions = [
   },
     {
     numb: 4,
-    question: "Seleccine el numero que reemplazaria el signo de interrogacion? <br>4+c=8 <br>c=?",
+    question: "Seleccine elvalor de C: <br>4+c=8 <br>c=?",
     answer: "4",
     options: [
       "2",

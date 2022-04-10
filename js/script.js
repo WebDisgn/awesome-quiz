@@ -1,4 +1,4 @@
-//selecting all required elements
+//seleccion de todos los elementos requeridos
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -10,27 +10,27 @@ const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
-// if startQuiz button clicked
+//si el boton iniciar hace click
 start_btn.onclick = ()=>{
-    info_box.classList.add("activeInfo"); //show info box
+    info_box.classList.add("activeInfo"); //ver cuadro info
 }
 
-// if exitQuiz button clicked
+//si el boton salir hace click
 exit_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo"); //hide info box
+    info_box.classList.remove("activeInfo"); //ocultar cuadro info
 }
 
-// if continueQuiz button clicked
+//si el boton continuar hace click
 continue_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo"); //hide info box
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(0); //calling showQestions function
-    queCounter(1); //passing 1 parameter to queCounter
-    startTimer(15); //calling startTimer function
-    startTimerLine(0); //calling startTimerLine function
+    info_box.classList.remove("activeInfo"); //ocultar cuadro info
+    quiz_box.classList.add("activeQuiz"); //ver cuadro info
+    showQuetions(0); //llamar a mostrar preguntas funcion
+    queCounter(1); //pasando un parametro al contador
+    startTimer(30); //llamar tiempo de arranque
+    startTimerLine(0); //llamando linea de tiempo inicial 
 }
 
-let timeValue =  15;
+let timeValue =  30;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
@@ -41,50 +41,50 @@ let widthValue = 0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-// if restartQuiz button clicked
+//si el boton repetir hace click 
 restart_quiz.onclick = ()=>{
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    result_box.classList.remove("activeResult"); //hide result box
-    timeValue = 15; 
+    quiz_box.classList.add("activeQuiz"); //mostrar cuadro de preguntas
+    result_box.classList.remove("activeResult"); //ocultar cuadro de preguntas
+    timeValue = 30; 
     que_count = 0;
     que_numb = 1;
     userScore = 0;
     widthValue = 0;
-    showQuetions(que_count); //calling showQestions function
-    queCounter(que_numb); //passing que_numb value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
-    startTimer(timeValue); //calling startTimer function
-    startTimerLine(widthValue); //calling startTimerLine function
-    timeText.textContent = "t/s="; //change the text of timeText to Time Left
-    next_btn.classList.remove("show"); //hide the next button
+    showQuetions(que_count); //llamar mostrar preguntas funcion
+    queCounter(que_numb); //pasar valor numerico al contador
+    clearInterval(counter); //borrar contador
+    clearInterval(counterLine); //borrar contador linea
+    startTimer(timeValue); //llamar tiempo entumecido
+    startTimerLine(widthValue); //llamar tiempo inicial linea
+    timeText.textContent = "t/s="; //cambiar texto deltiempo a la izquierda
+    next_btn.classList.remove("show"); //ocultar el boton siguiente
 }
 
-// if quitQuiz button clicked
+// si el boton salir hace click
 quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+    window.location.reload(); //volver a cargar la ventana actual 
 }
 
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
-// if Next Que button clicked
+// si el boton siguiente hace click
 next_btn.onclick = ()=>{
-    if(que_count < questions.length - 1){ //if question count is less than total question length
-        que_count++; //increment the que_count value
-        que_numb++; //increment the que_numb value
-        showQuetions(que_count); //calling showQestions function
-        queCounter(que_numb); //passing que_numb value to queCounter
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        startTimer(timeValue); //calling startTimer function
-        startTimerLine(widthValue); //calling startTimerLine function
-        timeText.textContent = "t/s="; //change the timeText to Time Left
-        next_btn.classList.remove("show"); //hide the next button
+    if(que_count < questions.length - 1){ //si recuento de preguntas es menor que longitud total de preguntas
+        que_count++; //incremento del valor contador
+        que_numb++; //aumentar el valor entumecido
+        showQuetions(que_count); //llamaar mostrar preguntas
+        queCounter(que_numb); //pasar valor entumecido al contador
+        clearInterval(counter); //borrar contador
+        clearInterval(counterLine); //borrar contador linea
+        startTimer(timeValue); //llamar tiempo entumecido
+        startTimerLine(widthValue); //llamar temporiador linea de inicio
+        timeText.textContent = "t/s="; //cambiar texto del tiempo a la izquierda
+        next_btn.classList.remove("show"); //ocultar el boton siguiente
     }else{
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        showResult(); //calling showResult function
+        clearInterval(counter); //borrar contador
+        clearInterval(counterLine); //borrar contador linear
+        showResult(); //llamar funsion resultado 
     }
 }
 
@@ -93,11 +93,12 @@ function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    let que_tag = `<span>${questions[index].numb}${':) '}${questions[index].question}</span>`;
+    let option_tag = `<div class="option"><span><span id='literal'>A.</span>${questions[index].options[0]}</span></div>`
+                   + `<div class="option"><span><span id='literal'>B.</span>${questions[index].options[1]}</span></div>`
+                   + `<div class="option"><span><span id='literal'>C.</span>${questions[index].options[2]}</span></div>`
+                   + `<div class="option"><span><span id='literal'>D.</span>${questions[index].options[3]}</span></div>`;
+
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -150,7 +151,7 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-    if (userScore > 3){ // if user scored more than 3
+    if (userScore > 6){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = `<p green><span> Felicidades! 🎉, tienes  ${userScore} sobre ${questions.length} </span> <br> APROBASTE SIGUE ADELANTE!!</p>`;
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
@@ -158,7 +159,7 @@ function showResult(){
         result_box.classList.remove('red');
         
     }
-    else if(userScore > 1){ // if user scored more than 1
+    else if(userScore > 3){ // if user scored more than 1
         let scoreTag = `<p><span> Muy bien! 🎉, tienes  ${userScore} sobre ${questions.length} </span> <br> APROBASTE SIGUE ADELANTE!!</P>`;
         scoreText.innerHTML = scoreTag;
         result_box.classList.add('green');
@@ -202,18 +203,18 @@ function startTimer(time){
 }
 
 function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
+    counterLine = setInterval(timer, 32);
     function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
-            clearInterval(counterLine); //clear counterLine
+        time += 0.32; //valoracion del valor del tiempo de actualizacion 0.32
+        time_line.style.width = time + "px"; //aumento de la anchura de la linea px del tomo por valor del tiempo
+        if(time > 320){ //si valor de tiempo es mayor que 320
+            clearInterval(counterLine); //borrar linea contador o contraria
         }
     }
 }
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> de <p>'+ questions.length +'</p> Preguntas</span>';
+    let totalQueCounTag = `<span><p>${index}</p> de <p>${ questions.length}</p> Preguntas</span>`;
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }

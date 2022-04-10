@@ -38,7 +38,7 @@ body{
 }
 
 .start_btn button{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     color: #007bff;
     padding: 15px 30px;
@@ -47,11 +47,12 @@ body{
     border-radius: 5px;
     background: #fff;
     cursor: pointer;
+    max-width: 540px;
 }
 
 .info_box{
     width: 100%;
-    max-width: 768px;
+    max-width: 540px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -63,7 +64,7 @@ body{
 .info_box .info-title{
     height: 60px;
     width: 100%;
-    max-width: 768px;
+    max-width: 540px;
     border-bottom: 1px solid lightgrey;
     display: flex;
     align-items: center;
@@ -111,7 +112,7 @@ body{
 
 .quiz_box{
     width: 100%;
-    max-width: 768px;
+    max-width: 540px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -138,12 +139,41 @@ body{
     font-weight: 600;
 }
 
+#azul{
+    color: #007bff;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+}
+
 .title a{
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    display: block;
+    margin-top: 5px;
     border-radius: 5px;
+    text-align: center;
+    width: max-content;
+    justify-content: center;
     text-decoration: none;
+    transition: ease 1s;
+    animation: efecto 1.2s infinite;
+}
+@keyframes efecto{
+    0%{
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+        color: #fff;
+        background-color: #007bff;
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+        color: black;
+        background-color: #fff;
+
+    }
+}
+
+.title a:hover{
+    font-size: 21px;
 }
 
 .quiz_box header .timer{
@@ -193,8 +223,10 @@ section{
 }
 
 section .que_text{
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 600;   
+    color: #007bff;
+    text-align: center;
 }
 
 section .option_list{
@@ -350,11 +382,11 @@ footer button.show{
     font-weight: 500;
 }
 
-/*.result_box .score_text span p {
+.result_box .score_text span p {
     padding: 0 4px;
     font-weight: 600;
     color: #004085;
-}*/
+}
 
 .result_box .buttons{
     display: flex;
@@ -404,4 +436,13 @@ footer button.show{
     color: #23903c;
     border-color: #23903c;
     background: #d4edda;
+}
+
+#literal{
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    padding: 2px;
+    margin-right: 30px;
 }
